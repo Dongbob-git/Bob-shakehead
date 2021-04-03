@@ -8,7 +8,7 @@ basic.showLeds(`
     `)
 basic.pause(100)
 basic.forever(function () {
-    if (input.compassHeading() < 160) {
+    if (135 > input.compassHeading() && input.compassHeading() > 45) {
         basic.showLeds(`
             . . # . .
             . . . # .
@@ -16,20 +16,28 @@ basic.forever(function () {
             . . . # .
             . . # . .
             `)
-    } else if (input.compassHeading() > 200) {
+    } else if (315 > input.compassHeading() && input.compassHeading() > 225) {
         basic.showLeds(`
             . . # . .
-            . # . # .
+            . # . . .
             # # # # #
-            . # . # .
+            . # . . .
+            . . # . .
+            `)
+    } else if (45 > input.compassHeading() || input.compassHeading() > 315) {
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # . # . #
+            . . # . .
             . . # . .
             `)
     } else {
         basic.showLeds(`
-            . . . . .
             . . # . .
-            # # # # #
             . . # . .
+            # . # . #
+            . # # # .
             . . # . .
             `)
     }
